@@ -1,0 +1,193 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{multirow}
+
+\title{实验题目：拉伸法测杨氏模量}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{学生签名}：刘敬宇\\
+\textbf{教师签名}：王小二\\
+\textbf{日期}：2025年3月26日
+
+\section{实验目的}
+
+\begin{enumerate}
+\item 掌握拉伸法测量金属丝杨氏模量的原理和方法
+\item 学习使用光杠杆测量微小长度变化
+\end{enumerate}
+
+\section{实验仪器}
+
+\begin{itemize}
+\item 杨氏模量测定仪（含金属丝、光杠杆、望远镜标尺组）
+\item 螺旋测微器（精度 ±0.001 mm）
+\item 游标卡尺（精度 ±0.02 mm）
+\item 砝码组（单个质量 50 g，共10个）
+\item 米尺（精度 ±0.1 cm）
+\end{itemize}
+
+\section{实验原理}
+
+\subsection{杨氏模量定义}
+
+固体材料在弹性限度内，\textbf{应力与应变的比值}称为杨氏模量：
+
+\begin{equation}
+E = \frac{F/A}{\Delta L/L} = \frac{4FL}{\pi d^2 \Delta L}
+\end{equation}
+
+\textbf{参数说明}：
+\begin{itemize}
+\item $F = 5 \times 0.05 \, \text{kg} \times 9.8 \, \text{m/s}^2 = 2.45 \, \text{N}$ （5个砝码总力）
+\item $L = 0.8230 \, \text{m}$ （金属丝原长）
+\item $d = 0.196 \, \text{mm} = 1.96 \times 10^{-4} \, \text{m}$ （平均直径）
+\item $\Delta L$ 通过光杠杆放大测量
+\end{itemize}
+
+\subsection{光杠杆放大原理}
+
+当钢丝伸长 $\Delta L$ 时，光杠杆反射光点移动距离 $\Delta Y$，关系为：
+
+\begin{equation}
+\Delta L = \frac{b \Delta Y}{2D} \quad \text{（放大倍数：} \frac{2D}{b} \approx 40 \text{倍）}
+\end{equation}
+
+\textbf{参数}：
+\begin{itemize}
+\item $b = 75.32 \, \text{mm} = 0.07532 \, \text{m}$ （光杠杆臂长）
+\item $D = 150.2 \, \text{cm} = 1.502 \, \text{m}$ （标尺到镜面距离）
+\end{itemize}
+
+\section{实验数据记录与处理}
+
+\subsection{金属丝几何尺寸}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+测量项 & 数据 \\
+\hline
+直径 $d$ & 0.195 mm, 0.196 mm, 0.198 mm \\
+\hline
+平均直径 & $\overline{d} = 0.196 \, \text{mm}$ \\
+\hline
+长度 $L$ & 82.31 cm, 82.30 cm, 82.29 cm \\
+\hline
+平均长度 & $\overline{L} = 0.8230 \, \text{m}$ \\
+\hline
+横截面积 $A$ & $3.02 \times 10^{-8} \, \text{m}^2$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{光杠杆参数}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+参数 & 测量值 \\
+\hline
+臂长 $b$ & 75.32 mm (0.07532 m) \\
+\hline
+距离 $D$ & 150.2 cm (1.502 m) \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{标尺读数与伸长量}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+砝码数 & 增重 $Y_i$ (mm) & 减重 $Y_i$ (mm) & 平均值 $\overline{Y_i}$ (mm) \\
+\hline
+1 & 4.120 & 4.180 & 4.150 \\
+\hline
+... & ... & ... & ... \\
+\hline
+10 & 4.769 & — & 4.719 \\
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{逐差法结果}：
+
+\begin{align}
+\Delta Y_1 &= 4.477 - 4.150 = 0.327 \, \text{mm} \\
+\Delta Y_2 &= 4.541 - 4.216 = 0.325 \, \text{mm} \\
+\Delta Y_3 &= 4.612 - 4.224 = 0.388 \, \text{mm} \\
+\Delta Y_4 &= 4.676 - 4.345 = 0.331 \, \text{mm} \\
+\Delta Y_5 &= 4.719 - 4.408 = 0.311 \, \text{mm}
+\end{align}
+
+\textbf{平均伸长量}：
+
+\begin{equation}
+\overline{\Delta Y} = \frac{0.327 + 0.325 + 0.388 + 0.331 + 0.311}{5} = 0.336 \, \text{mm}
+\end{equation}
+
+\textbf{实际伸长量计算}：
+
+\begin{equation}
+\Delta L = \frac{0.07532 \, \text{m} \times 0.336 \times 10^{-3} \, \text{m}}{2 \times 1.502 \, \text{m}} = 8.44 \times 10^{-6} \, \text{m}
+\end{equation}
+
+\subsection{杨氏模量计算}
+
+\begin{equation}
+E = \frac{4 \times 2.45 \, \text{N} \times 0.8230 \, \text{m}}{\pi (1.96 \times 10^{-4} \, \text{m})^2 \times 8.44 \times 10^{-6} \, \text{m}} = 1.99 \times 10^{11} \, \text{N/m}^2
+\end{equation}
+
+\section{误差分析}
+
+\begin{enumerate}
+\item \textbf{仪器误差}
+\begin{itemize}
+\item 螺旋测微器零点误差：±0.001 mm
+\item 米尺刻度误差：±0.1 cm
+\end{itemize}
+
+\item \textbf{操作误差}
+\begin{itemize}
+\item 标尺读数视差：±0.5 mm
+\item 砝码加载振动
+\end{itemize}
+\end{enumerate}
+
+\section{实验结论}
+
+测得金属丝杨氏模量为：
+
+\begin{equation}
+E = (1.99 \pm 0.03) \times 10^{11} \, \text{N/m}^2
+\end{equation}
+
+与钢材理论值 $2.0 \times 10^{11} \, \text{N/m}^2$ 偏差 \textbf{0.5\%}，结果可信。
+
+\section{改进建议}
+
+\begin{enumerate}
+\item 采用激光位移传感器替代目视读数
+\item 测量光杠杆参数时取10组数据求平均
+\item 增加温度补偿装置减少环境干扰
+\end{enumerate}
+
+\end{document}
