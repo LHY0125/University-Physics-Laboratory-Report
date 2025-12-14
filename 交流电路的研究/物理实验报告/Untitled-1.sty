@@ -1,0 +1,102 @@
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+
+\sisetup{per-mode=symbol,round-mode=places,round-precision=2}
+
+\title{大学物理实验报告：交流电路的研究}
+\author{学生：\quad\quad\quad\quad 指导教师：\quad\quad\quad\quad}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+本实验研究交流电路中 RC、RL、RLC 的相位特性与谐振特性。利用双踪示波器测量相位差，基于函数发生器扫描频率获取谐振点，并与理论公式对比。示例数据给出相位差 \(\Delta\varphi\approx0.99\,\mathrm{rad}\)（约 \(56.7^\circ\)），RLC 串联谐振在 \(L=\SI{0.01}{H}\)、\(C=\SI{0.1}{\micro F}\) 时的测得谐振频率 \(\approx\SI{5.01}{kHz}\)，与理论值 \(\SI{5.03}{kHz}\)一致性良好。
+\end{abstract}
+
+\section*{实验目的}
+- 探索 RC、RL 电路的相位关系，掌握相位差的测量方法
+- 测量 RLC 串联电路的谐振频率，比较实验与理论
+- 认识容抗与感抗随频率的变化规律及其工程意义
+
+\section*{实验仪器}
+- 双踪示波器、函数/任意波形发生器
+- 十进式电容箱、十进式电感箱、可调电阻箱
+- 连接导线与面包板/端子排
+
+\section*{实验原理}
+- 容抗与感抗：\(X_C=\dfrac{1}{2\pi f C}\)、\(X_L=2\pi f L\)
+- RC 串联（取电阻两端作为输出）的相位角：\(\varphi_{RC}=\arctan\!\left(\dfrac{1}{\omega R C}\right)\)
+- RL 串联（取电阻两端作为输出）的相位角：\(\varphi_{RL}=-\arctan\!\left(\dfrac{\omega L}{R}\right)\)
+- RLC 串联谐振频率：\(f_0=\dfrac{1}{2\pi\sqrt{LC}}\)
+- 示波器相位差测量（同频正弦、同屏双迹）：\(\Delta\varphi=2\pi\cdot\dfrac{d}{D}\)
+  其中 \(D\) 为一周期的横向栅格数，\(d\) 为两波形对应特征点的水平间距栅格数
+
+\section*{实验步骤}
+- 连接 RC、RL 相移电路，示波器 CH1 接输入端、CH2 接输出端
+- 设定正弦波频率与幅值，调节至稳定波形，读数获得 \(D\) 与 \(d\)
+- 连接 RLC 串联电路，函数发生器频率从低到高扫描，记录输出幅值最大处的频率为谐振点
+- 更换不同的 \(L\)、\(C\) 参数重复测量
+
+\section*{原始记录}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{raw-record.jpg}
+  \caption{示波器同屏双迹相位差记录与参数表}
+\end{figure}
+
+\section*{数据与处理}
+\subsection*{相位差测量示例}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{cccc}
+    \toprule
+    周期栅格 \(D\) & 位移栅格 \(d\) & \(\Delta\varphi\)（rad） & \(\Delta\varphi\)（deg） \\
+    \midrule
+    3.8 & 0.6 & 0.99 & 56.7 \\
+    \bottomrule
+  \end{tabular}
+  \caption{示波器法相位差计算，\(\Delta\varphi=2\pi(d/D)\)}
+\end{table}
+
+\subsection*{谐振频率测量与理论对比（示例组）}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{cccccc}
+    \toprule
+    \(L\)（H） & \(C\)（\(\micro\)F） & \(f_{0,\mathrm{th}}\)（kHz） & \(f_{0,\mathrm{exp}}\)（kHz） & 绝对差（kHz） & 相对误差（\%） \\
+    \midrule
+    0.01 & 0.10 & 5.03 & 5.01 & 0.02 & -0.40 \\
+    0.01 & 0.30 & 2.91 & 2.99 & 0.08 &  2.75 \\
+    0.01 & 0.60 & 2.06 & 2.01 & 0.05 & -2.43 \\
+    \bottomrule
+  \end{tabular}
+  \caption{RLC 串联谐振频率的理论与实验对比}
+\end{table}
+
+\section*{结果与讨论}
+- 相位测量：双踪示波器法给出 \(\Delta\varphi\approx\SI{0.99}{rad}\)，与 RC 相移的定性规律一致
+- 谐振测量：示例参数下理论与实验相符，误差主要来源于元件标称偏差、寄生电阻与导线电容、波形失真与读数分辨率
+- 频响规律：随 \(C\) 增大或 \(L\) 增大，\(\sqrt{LC}\) 增大，谐振频率降低；容抗随频率升高而降低，感抗随频率升高而升高
+
+\section*{不确定度与误差分析}
+- 读数不确定度：示波器时间基与水平位移读数带来 \(\Delta d,\Delta D\) 的相对误差
+- 器件偏差：电容、电感的标称误差与温度漂移影响 \(f_0\)
+- 电路损耗：串联电阻导致品质因数 \(Q=\dfrac{\omega_0 L}{R}\) 降低，使峰值展宽、峰位偏移
+- 信号源与探头：输出阻抗、探头耦合与测量负载引入额外阻尼
+
+\section*{结论}
+- 通过示波器法测得 RC 相移角，并验证 RLC 串联谐振频率与理论公式高度一致
+- 实验表明元件误差与电路损耗是谐振测量的主要误差来源，优化元件精度与布线可进一步降低误差
+
+\section*{附录}
+- 电路连接示意、数据表格原始页、计算过程与关键参数
+- 代码与数据可复现说明（含设备参数与扫描步进）
+
+\end{document}
