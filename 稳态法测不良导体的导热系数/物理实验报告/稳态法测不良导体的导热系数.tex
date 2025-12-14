@@ -1,0 +1,122 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{a4paper,margin=22mm}
+\title{稳态法测不良导体的导热系数实验分析报告}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\section{实验名称}
+稳态法测不良导体的导热系数
+
+\section{实验目的}
+\begin{enumerate}
+\item 了解热传导现象的物理过程；
+\item 学习热电偶测量温度的原理和方法；
+\item 掌握用稳态法测量不良导体导热系数的方法；
+\item 掌握通过作图法（线性回归法）求冷却速率的方法。
+\end{enumerate}
+
+\section{实验原理}
+\subsection{热传导定律（傅里叶定律）}
+当物体内部存在温度分布时，热量会从高温端向低温端传递。垂直于热传导方向、相距为 $h$ 、面积为 $S$ 、温度分别为 $T_1$ 和 $T_2$（$T_1>T_2$）的两平行平面，在 $\Delta t$ 时间内传递的热量 $\Delta Q$ 满足
+\begin{equation}
+\frac{\Delta Q}{\Delta t} = -\lambda S \frac{T_2-T_1}{h}
+\end{equation}
+其中 $\lambda$ 为导热系数。由此可得
+\begin{equation}
+\lambda = \frac{\Delta Q}{\Delta t} \cdot \frac{h}{S(T_1-T_2)}
+\end{equation}
+
+\subsection{传热速率的测量（稳态法）}
+实验系统达到稳态时，样品上下表面温度 $T_1、T_2$ 保持不变，此时样品的传热速率等于下铜板的散热速率。通过移去样品、加热下铜板后自然冷却并记录 $V_2-t$ 数据，对数据进行线性回归，得到 $\left.\frac{\Delta V}{\Delta t}\right|_{V=V_c}$（冷却速率）。结合下铜板的质量 $m$、比热 $c$ 以及散热面积的修正，传热速率为
+\begin{equation}
+\frac{\Delta Q}{\Delta t} = mc \cdot \frac{2h_P+R_P}{2h_P+2R_P} \cdot \left. \frac{\Delta V}{\Delta t} \right|_{V=V_c}
+\end{equation}
+
+\subsection{热电偶测温原理}
+本实验采用铜-康铜热电偶，冷端置于冰水混合物（$T_0=0^{\circ}\mathrm{C}$）中，热电动势 $V$ 与工作端温度 $T$ 近似成正比（$V=\alpha T$）。因此可通过测量电压 $V_1、V_2$ 间接得到样品上下表面的温度 $T_1、T_2$。
+
+\subsection{导热系数最终表达式}
+结合电压—温度关系，导热系数写为
+\begin{equation}
+\lambda = \frac{m c h_B}{\pi R_B^2 (V_1-V_2)} \cdot \frac{2h_P+R_P}{2h_P+2R_P} \cdot \left. \frac{\Delta V}{\Delta t} \right|_{V=V_c}
+\end{equation}
+其中 $h_B、R_B$ 为样品的厚度与半径，$h_P、R_P$ 为下铜板的厚度与半径。
+
+\section{实验仪器}
+YBF-2 型导热系数测试仪、铜-康铜热电偶、杜瓦瓶（含冰水混合物）、待测不良导体样品（橡胶盘）、游标卡尺等。
+
+\section{实验内容与步骤}
+\begin{enumerate}
+\item 基本物理量测量：用游标卡尺测量样品的厚度 $h_B$、半径 $R_B$；
+\item 样品与热电偶安装：放置样品与下铜板，调节支架使样品与上下铜板紧密接触；将热电偶工作端涂硅脂后插入上下铜板的小孔，冷端插入冰水混合物；
+\item 设备开启与参数设置：开启风扇电源，将加热温度设定为 $60^{\circ}\mathrm{C}$，控制方式选为自动；
+\item 稳态数据记录：加热约 30\,min 后，每隔 60\,s 记录电压 $V_1$（上铜板）、$V_2$（下铜板），连续 3 组不变时记 $V_2$ 为稳态电压 $V_c$；
+\item 冷却曲线测量：移去样品，使上下铜板直接接触，当 $V_2$ 比 $V_c$ 高 0.3\,mV 时移开上铜板，每隔 30\,s 记录 $V_2$，直至 $V_2$ 比 $V_c$ 低 0.2\,mV；
+\item 数据处理与计算：对 $V_2-t$ 数据进行线性回归，求 $V_c$ 处的冷却速率并计算导热系数 $\lambda$。
+\end{enumerate}
+
+\section{数据处理}
+\subsection{基本物理量记录（表4\textendash7\textendash1）}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+下铜板质量 $m$/kg & 样品半径 $R_B$/m & 样品厚度 $h_B$/m & 下铜板比热 $c$/J\,(kg\,K)$^{-1}$ & 下铜板厚度 $h_P$/m & 下铜板半径 $R_P$/m \\
+\hline
+0.0828 & 0.0647 & 0.00876 & 3.805\times 10^{2} & 0.007 & 0.0647 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{稳态电压记录（表4\textendash7\textendash2）}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+次数 & 1 & 2 & 3 & 稳态 $V_1$/mV & 稳态 $V_c$/mV \\
+\hline
+$V_1$/mV & 2.65 & 2.65 & 2.66 & 2.652 & \textendash \\
+\hline
+$V_2$/mV & 2.02 & 2.03 & 2.03 & \textendash & 2.084 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{冷却过程记录（表4\textendash7\textendash3）}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$t$/s & 0 & 30 & 60 & 90 & 120 & 150 & 180 & 210 & 240 & 270 \\
+\hline
+$V_2$/mV & 2.35 & 2.27 & 2.21 & 2.15 & 2.10 & 2.05 & 2.00 & 1.95 & 1.91 & 1.87 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{冷却速率与导热系数计算}
+对冷却数据进行线性回归，得时间平均值 $\bar{t}=135\,\mathrm{s}$、电压平均值 $\bar{V}_2=2.084\times 10^{-3}\,\mathrm{V}$，协方差和 $\sum (t_i - \bar{t})(V_{2i} - \bar{V}_2) = -126.81\times 10^{-5}\,\mathrm{s\,V}$，时间偏差平方和 $\sum (t_i - \bar{t})^2 = 85500\,\mathrm{s^2}$，因此冷却速率
+\[
+\left. \frac{\Delta V}{\Delta t} \right|_{V=V_c} = \frac{-126.81\times 10^{-5}}{85500} \approx -1.483\times 10^{-6}\,\mathrm{V/s}
+\]
+取绝对值
+\[
+\left| \frac{\Delta V}{\Delta t} \right| = 1.483\times 10^{-6}\,\mathrm{V/s}
+\]
+代入表达式
+\[
+\lambda = \frac{0.0828\times 3.805\times 10^{2}\times 0.00876}{\pi\times (0.0647)^2\times (2.652\times 10^{-3} - 2.084\times 10^{-3})} \cdot \frac{2\times 0.007 + 0.0647}{2\times 0.007 + 2\times 0.0647} \cdot 1.483\times 10^{-6}
+\]
+分步计算得
+\[
+\lambda \approx 0.0276\,\mathrm{W\,(m\,K)^{-1}}
+\]
+
+\section{实验结果与分析}
+\begin{enumerate}
+\item 实验结果：测得待测橡胶盘样品的导热系数为 $\lambda = 0.0276\,\mathrm{W\,(m\,K)^{-1}}$。
+\item 误差分析：系统误差包含样品与铜板接触处微小空气层与热电偶涂硅脂不均匀造成的偏差；偶然误差包含稳态判据较松与冷却曲线拟合的数据波动。
+\end{enumerate}
+
+\end{document}
