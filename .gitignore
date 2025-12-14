@@ -1,4 +1,8 @@
 .trae/
+.obsidian/
+.trash/
+
+// 报告与数据内容
 *.aux
 *.log
 *.synctex.gz
